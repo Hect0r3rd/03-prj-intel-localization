@@ -1,0 +1,201 @@
+/* style.css */
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header / Hero Section */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #0071c5, #0056b3); /* Intel blue gradient */
+  border-radius: 8px;
+  margin-bottom: 40px;
+  color: white; 
+}
+
+header img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #e0e0e0; 
+}
+
+/* TIMELINE SECTION STYLES   */
+.timeline {
+  display: flex;
+  overflow-x: auto; 
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  direction: ltr;
+}
+
+.timeline div {
+  flex: 0 0 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  scroll-snap-align: start;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline div img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* Hover effect */
+.timeline div:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
+  border-color: #0056b3;
+}
+
+/* Hide card descriptions */
+.timeline div p {
+  display: none;
+  margin-top: 10px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Reveal text on hover */
+.timeline div:hover p {
+  display: block;
+}
+
+/* Headings inside cards */
+.timeline h2 {
+  font-size: 1.5rem;
+  color: #0056b3;
+}
+
+.timeline h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.timeline p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive: stack cards vertically */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .timeline div {
+    flex: 1 1 auto;
+  }
+}
+/* Timeline note */
+.timeline-note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
+/* NEW SECTIONS STYLING      */
+
+
+/* Column cards */
+.container .col-12.col-md-4 {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  direction: inherit;    /* follow page language dynamically */
+  text-align: start;     /* left-aligned for LTR, right-aligned for RTL */
+}
+
+.container .col-12.col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 113, 197, 0.2);
+}
+
+/* ------------------- Subscription Form ------------------- */
+form .form-control, form button {
+  min-width: 250px;
+  border-radius: 6px;
+  text-align: start;     /* dynamically aligns with page dir */
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  font-size: 0.9rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------- Modal / Tooltip / Popover ------------------- */
+.tooltip,
+.popover,
+.modal-content {
+  direction: inherit;    /* dynamic LTR/RTL */
+  text-align: start;
+}
+
+.modal-header {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 1rem 1.25rem;
+}
+
+/* Title */
+.modal-header .modal-title {
+  margin: 0;
+  text-align: center;      
+  max-width: calc(100% - 50px); 
+  word-wrap: break-word;
+}
+
+/* Close button  */
+.modal-header .btn-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+}
+
+.modal-body {
+  text-align: start;
+  direction: inherit;
+}
